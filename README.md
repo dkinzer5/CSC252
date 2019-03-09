@@ -1,4 +1,4 @@
-# CSC 252 (Programming in C++
+# CSC 252 (Programming in C++)
 Homework code and practice code from class
 
 ## How to use

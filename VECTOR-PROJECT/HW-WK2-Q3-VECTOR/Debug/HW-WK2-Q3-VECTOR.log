@@ -1,6 +1,0 @@
-﻿  main.cpp
-  vector.cpp
-  Generating Code...
-main.obj : error LNK2019: unresolved external symbol "public: __thiscall CSC252HW2::vector<int>::vector<int>(void)" (??0?$vector@H@CSC252HW2@@QAE@XZ) referenced in function _main
-main.obj : error LNK2019: unresolved external symbol "public: __thiscall CSC252HW2::vector<int>::~vector<int>(void)" (??1?$vector@H@CSC252HW2@@QAE@XZ) referenced in function _main
-C:\Users\dylan\Desktop\HW-WK2-Q3-VECTOR - Copy\Debug\HW-WK2-Q3-VECTOR.exe : fatal error LNK1120: 2 unresolved externals

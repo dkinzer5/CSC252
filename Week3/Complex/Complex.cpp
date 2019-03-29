@@ -4,7 +4,7 @@
 
 namespace CSC252HW3
 {
-    using std::cout;
+	using std::cout;
 	Complex::Complex() : m_real(0), m_imag(0) {}
 
 	Complex::Complex(double real, double imaginary) : m_real(real), m_imag(imaginary)
@@ -71,7 +71,7 @@ namespace CSC252HW3
 
 		// Take care of changing sign in 'L'
 		// if negative, make positive
-        L *= -1;
+		L *= -1;
 
 		// Combine L and F together
 		F += L;
@@ -89,7 +89,7 @@ namespace CSC252HW3
 	Complex Complex::operator /(Complex& that)
 	{
 		// return object
-		Complex quotient; 
+		Complex quotient;
 
 		// conjugate object
 		Complex conjugate;
@@ -115,7 +115,7 @@ namespace CSC252HW3
 		this->m_imag = that.m_imag;
 		return *this;
 	}
-	
+
 	// compare
 	bool Complex::operator !=(const Complex& that) const
 	{
@@ -123,33 +123,35 @@ namespace CSC252HW3
 		return  !(this->m_real == that.m_real && this->m_imag == that.m_imag);
 	}
 
-    ostream& operator <<(ostream& out, const Complex& complexNum)
-    {
-        if (complexNum.m_imag > 0)
-        {
-            out << complexNum.m_real << "+" << complexNum.m_imag << "i";
-        }
-        else
-        {
-            out << complexNum.m_real << " " << complexNum.m_imag << "i";
-            
-        }
-        return out;
-    }
-    
-    istream& operator >>(istream& in, Complex& complexNum)
-    {
-        cout << "Enter the real portion: ";
-        in >> complexNum.m_real;
-        
-        cout << "Enter the imaginary portion: ";
-        in >> complexNum.m_imag;
-        
-        return in;
-    }
+	// cout
+	ostream& operator <<(ostream& out, const Complex& complexNum)
+	{
+		if (complexNum.m_imag > 0)
+		{
+			out << complexNum.m_real << "+" << complexNum.m_imag << "i";
+		}
+		else
+		{
+			out << complexNum.m_real << " " << complexNum.m_imag << "i";
 
-	
- 
+		}
+		return out;
+	}
+
+	// cin
+	istream& operator >>(istream& in, Complex& complexNum)
+	{
+		//cout << "Enter the real portion: ";
+		in >> complexNum.m_real;
+
+//		cout << "Enter the imaginary portion: ";
+		in >> complexNum.m_imag;
+
+		return in;
+	}
+
+
+
 	//DTOR
 	Complex::~Complex()
 	{

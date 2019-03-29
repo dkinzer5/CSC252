@@ -2,9 +2,13 @@
 #include <string>
 #include <iostream>
 #include <ostream>
+#include <istream>
 namespace CSC252HW3
 {
 	using std::string;
+    using std::ostream;
+    using std::istream;
+    
 	class Complex
 	{
 	public:
@@ -40,12 +44,12 @@ namespace CSC252HW3
 		bool operator !=(const Complex&) const;
 		
 		// print out
-		std::ostream& operator <<(std::ostream& out, const Complex& complexNum) const;
-/*
+        friend ostream& operator <<(ostream& out, const Complex& complexNum);
+        
 		// read in
-		Complex operator >>(const Complex& complexNum) const;
+        friend istream& operator >>(istream& in, Complex& complexNum);
 
-		 */
+		 
 		 // DTOR
 		~Complex();
 

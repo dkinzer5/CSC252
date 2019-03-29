@@ -1,8 +1,10 @@
+#include <iostream>
 #include "Complex.h"
 
 
 namespace CSC252HW3
 {
+    using std::cout;
 	Complex::Complex() : m_real(0), m_imag(0) {}
 
 	Complex::Complex(double real, double imaginary) : m_real(real), m_imag(imaginary)
@@ -69,15 +71,7 @@ namespace CSC252HW3
 
 		// Take care of changing sign in 'L'
 		// if negative, make positive
-		if (std::signbit(L))
-		{
-			L = L * -1;
-		}
-		// if positive, make negative
-		else
-		{
-			L = L * -1;
-		}
+        L *= -1;
 
 		// Combine L and F together
 		F += L;
@@ -129,19 +123,33 @@ namespace CSC252HW3
 		return  !(this->m_real == that.m_real && this->m_imag == that.m_imag);
 	}
 
-	// print out
-	std::ostream Complex::operator <<(std::ostream out, const Complex& complexNum) const
-	{
-		// print out real portion
-		std::cout << complexNum.m_real << " " << complexNum.m_imag;
-	}
-/*
-	// read in
-	Complex operator >>(const Complex& complexNum)
-	{
+    ostream& operator <<(ostream& out, const Complex& complexNum)
+    {
+        if (complexNum.m_imag > 0)
+        {
+            out << complexNum.m_real << "+" << complexNum.m_imag << "i";
+        }
+        else
+        {
+            out << complexNum.m_real << " " << complexNum.m_imag << "i";
+            
+        }
+        return out;
+    }
+    
+    istream& operator >>(istream& in, Complex& complexNum)
+    {
+        cout << "Enter the real portion: ";
+        in >> complexNum.m_real;
+        
+        cout << "Enter the imaginary portion: ";
+        in >> complexNum.m_imag;
+        
+        return in;
+    }
 
-	}
-	*/
+	
+ 
 	//DTOR
 	Complex::~Complex()
 	{
